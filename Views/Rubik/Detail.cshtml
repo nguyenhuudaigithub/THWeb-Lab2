@@ -1,0 +1,25 @@
+﻿@model LAB02.Models.Rubik
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.Ten)</h2>
+<div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+        <img src="/@Html.DisplayFor(model => model.Hinh)" alt="thumbnail">
+    </div>
+    <div class="caption">
+        <p>@Html.DisplayNameFor(model => model.Loai): @Html.DisplayFor(model => model.Loai)</p>
+        <p>@Html.DisplayNameFor(model => model.MoTa): @Html.DisplayFor(model => model.MoTa)</p>
+        <p>@Html.DisplayNameFor(model => model.Gia): @Html.DisplayFor(model => model.Gia)</p>
+        <p>@Html.DisplayNameFor(model => model.Hang): @Html.DisplayFor(model => model.Hang)</p>
+        <p>@Html.DisplayNameFor(model => model.SoLgTon): @Html.DisplayFor(model => model.SoLgTon)</p>
+        <p>
+            <a href="#" class="btn btn-primary" role="button">Buy</a>
+            @Html.ActionLink("Black", "Index", "", new { @class = "btn btn-info" })
+        </p>
+    </div>
+</div>
+

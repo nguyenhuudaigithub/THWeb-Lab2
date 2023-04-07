@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LAB02.Models.Rubik>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="panel panel-danger">
+                <div class="panel panel-heading">
+                    @item.Ten
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "pull-right" })
+                </div>
+                <div class="panel-body">
+                    <p><strong>Loại: </strong>@item.Loai</p>
+                    <p><strong>Mô tả: </strong>@item.MoTa</p>
+                    <p><strong>Giá: </strong>@item.Gia</p>
+                    <p><strong>Hãng: </strong>@item.Hang</p>
+                    <p><img src="/@item.Hinh" alt="hinh thumnail" style="width: 100%;
+                    height: 100%;"></p>
+                    <p><strong>Còn lại: </strong>@item.SoLgTon</p>
+                </div>
+                <div class="panel-footer clearfix">
+                    <div class="pull-right">
+                        <a href="#" class="btn btn-primary">Oder</a>
+                        @Html.ActionLink("Read more...","Detail",new {id = item.Id}, new {@class = "btn btn-defualt"})
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
